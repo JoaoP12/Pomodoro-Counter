@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer - By João Pedro Lopes</title>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/Timer.js"></script>
+    <script type="text/javascript" src="./js/Settings.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/settings.css">
+    <link rel="stylesheet" type="text/css" href="./css/app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <h1>Pomodoro Timer</h1>
+        <div class="timer">
+            <p>
+                <span id="minutes">00</span>:<span id="seconds">00</span>
+            </p>
+            <div class="options-buttons">
+                <input type="button" id="btn-start" value="Start" class="option-btn">
+                <input type="button" id="btn-stop" value="Stop" class="option-btn">
+                <input type="button" id="btn-settings" value="Settings" class="option-btn">
+            </div>
+        </div>
+        <!-- Intervals indicators -->
+        <div class="intervals">
+            <h2 id="work-time-title">Work time</h2>
+            <h2 id="short-break-title">Short break</h2>
+            <h2 id="long-break-title">Long break</h2>
+        </div>
+    </div>
+    <!-- Settings Popup -->
+    <div id="settings-popup">
+        <div id="inner-container">
+            <h2>Pomodoro Settings</h2>
+            <br>
+            <div id="time-settings">
+                <h3>Time (minutes)</h3>
+                <br>
+                <div id="time-settings-container">
+                    <div class='time-setting-field'>
+                        <label>Long br.</label>
+                        <input type="number" min="0" id="long-break-time" value="15">
+                    </div>
+                    <div class='time-setting-field'>
+                        <label>Short br.</label>
+                        <input type="number" min="0" id="short-break-time" value="5">
+                    </div>
+                    <div class='time-setting-field'>
+                        <label>Pomodoro</label>
+                        <input type="number" min="0" id="work-time" value="25">
+                    </div>
+                </div>
+            </div>
+            <div id="other-settings">
+                <div class="setting-field">
+                    <label>Long break interval</label>
+                    <input type="number" min="0" id="rounds-to-long-break" value="4">
+                </div>
+                <hr>
+                <div class="setting-field">
+                    <label for="auto-start-pomodoros">Auto-start pomodoro?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-start-pomodoro">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+                <div class="setting-field">
+                    <label for="auto-start-pomodoros">Auto-start breaks?</label>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-start-break">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <input id="save-settings" type="button" value="Close">
+        </div>
+    </div>
+</body>
+</html>
