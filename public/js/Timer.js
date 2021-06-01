@@ -54,15 +54,18 @@ class Timer{
                 if (self.roundsPassed == self.roundsToLong){
                     self.roundsPassed = 0;
                     self.configTimer(self, self.longBreak, 3);
+                    NotificationManager.notifyTimerChange(NotificationManager.types.longBrk);
                     self.start();
                     return;
                 }
                 self.configTimer(self, self.shortBreak, 2);
+                NotificationManager.notifyTimerChange(NotificationManager.types.shortBrk);
                 self.start();
                 return;
             }
             if (self.breakRunning) {
                 self.configTimer(self, self.workTime, 1);
+                NotificationManager.notifyTimerChange(NotificationManager.types.workTime);
                 self.start();
                 return;
             }

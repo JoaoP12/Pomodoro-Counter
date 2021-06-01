@@ -1,4 +1,5 @@
 window.onload = function () {
+    Notification.requestPermission();
     document.getElementById('settings-popup').style.display = 'none';
     const settings = new Settings();
     const timer = new Timer(settings.config);
