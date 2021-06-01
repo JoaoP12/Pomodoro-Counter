@@ -1,0 +1,24 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "The aim of the project is just to practice Vanilla JavaScript, time handling, desktop notifications and to create my own Pomodoro Counter with features that fit my needs, and of course that can be easily modified to fit other people's needs too.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoP12/Pomodoro-Counter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoP12/Pomodoro-Counter/issues"
+  },
+  "homepage": "https://github.com/JoaoP12/Pomodoro-Counter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "https": "^1.0.0"
+  }
+}
