@@ -36,6 +36,8 @@ To start the timer, you can just hit the "Start" button.
 
 ## To do
 - [x] Implement the desktop notifications.
-- [ ] Implement more settings.
+- [x] Implement more settings.
+    - [x] Implement setting to notificate user in the last x minutes. (User can choose how many minutes before).
+    - [ ] Implement alarm sound.
 - [ ] Make the page responsive.
 - [ ] Change colors when alternating between focus time and breaks.
