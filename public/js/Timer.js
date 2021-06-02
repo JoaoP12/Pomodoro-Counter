@@ -21,6 +21,7 @@ class Timer{
         this.workTime = config.workTime;
         this.autoStartBrk = config.autoStartBrk;
         this.autoStartPomo = config.autoStartPomo;
+        this.timeAlert = config.timeAlert;
         this.roundsPassed = 0;
         this.minutes.innerHTML = config.workTime >= 10 ? String(config.workTime) : `0${config.workTime}`;
         this.seconds.innerHTML = "00";
@@ -48,6 +49,9 @@ class Timer{
             if (self.valMins > 0) {
                 self.valMins -= 1;
                 self.setMinutesHTML(self.valMins);
+                if (self.valMins == self.timeAlert) {
+                    NotificationManager.notifyTimerChange(NotificationManager.types.timeAlert, self.timeAlert);
+                }
                 self.valSecs = 59;
                 self.setSecondsHTML(59);
                 return;

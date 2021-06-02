@@ -6,6 +6,7 @@ class Settings {
         this.autoStartPomo = false;
         this.autoStartBrk = false;
         this.longInterval = 4;
+        this.notifyRemainTime = 5;
     }
     get config() {
         return {
@@ -14,7 +15,8 @@ class Settings {
             longBreak: this.longBreakTime,
             roundsToLong: this.longInterval,
             autoStartPomo: this.autoStartPomo,
-            autoStartBrk: this.autoStartBrk
+            autoStartBrk: this.autoStartBrk,
+            timeAlert: this.notifyRemainTime
         };
     } 
 
@@ -25,6 +27,7 @@ class Settings {
         this.autoStartPomo = document.getElementById('auto-start-pomodoro').checked;
         this.autoStartBrk = document.getElementById('auto-start-break').checked;
         this.longInterval = document.getElementById('rounds-to-long-break').value || 4;
+        this.notifyRemainTime = document.getElementById('time-remaining-alert').value || 5;
         this.popup();
     }
 
