@@ -23,8 +23,8 @@ class Settings {
         this.shortBreakTime = document.getElementById('short-break-time').value || 5;
         this.longBreakTime = document.getElementById('long-break-time').value || 15;
         this.autoStartPomo = document.getElementById('auto-start-pomodoro').checked;
-        this.autoStartBrk = document.getElementById('auto-start-break').ckecked;
-        this.longInterval = document.getElementById('rounds-to-long-break') || 4;
+        this.autoStartBrk = document.getElementById('auto-start-break').checked;
+        this.longInterval = document.getElementById('rounds-to-long-break').value || 4;
         this.popup();
     }
 

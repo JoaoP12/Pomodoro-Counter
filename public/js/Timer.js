@@ -19,6 +19,8 @@ class Timer{
         this.longBreak = config.longBreak;
         this.roundsToLong = config.roundsToLong;
         this.workTime = config.workTime;
+        this.autoStartBrk = config.autoStartBrk;
+        this.autoStartPomo = config.autoStartPomo;
         this.roundsPassed = 0;
         this.minutes.innerHTML = config.workTime >= 10 ? String(config.workTime) : `0${config.workTime}`;
         this.seconds.innerHTML = "00";
@@ -55,18 +57,25 @@ class Timer{
                     self.roundsPassed = 0;
                     self.configTimer(self, self.longBreak, 3);
                     NotificationManager.notifyTimerChange(NotificationManager.types.longBrk);
+                } else {
+                    self.configTimer(self, self.shortBreak, 2);
+                    NotificationManager.notifyTimerChange(NotificationManager.types.shortBrk);
+                }
+                if (self.autoStartBrk) {
                     self.start();
                     return;
                 }
-                self.configTimer(self, self.shortBreak, 2);
-                NotificationManager.notifyTimerChange(NotificationManager.types.shortBrk);
-                self.start();
+                self.stop();
                 return;
             }
             if (self.breakRunning) {
                 self.configTimer(self, self.workTime, 1);
                 NotificationManager.notifyTimerChange(NotificationManager.types.workTime);
-                self.start();
+                if (self.autoStartPomo) {
+                    self.start();
+                    return;
+                }
+                self.stop();
                 return;
             }
         }
@@ -107,7 +116,7 @@ class Timer{
         if (!this.breakRunning) {
             this.roundsPassed++;
         }
-        this.interval = setInterval(this.countTime, 1000, this);
+        this.interval = setInterval(this.countTime, 1, this);
     }
 
     stop (){
