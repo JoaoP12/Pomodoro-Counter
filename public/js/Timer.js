@@ -1,10 +1,10 @@
 class Timer{
-    constructor (config) {
+    constructor (config, alarmManager) {
         this.minutes = document.getElementById("minutes");
         this.seconds = document.getElementById("seconds");
         this.stopTimer = false;
         this.updateTimerSettings(config);
-        this.alarmManager = new AlarmManager();
+        this.alarmManager = alarmManager;
     }
 
     setMinutesHTML (minutes) {

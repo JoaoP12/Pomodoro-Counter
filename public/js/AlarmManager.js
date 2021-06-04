@@ -4,14 +4,19 @@ class AlarmManager {
         this._playAlarmSound = true;
     }
 
-    set alarmSound (soundUrl) {
-        this._alarmSound = new Audio(soundUrl);
+    static alarmOptions = Object.freeze({
+        "1": "morning-alarm",
+        "2": "slot-machine",
+        "3": "vintage-alarm"
+    });
+
+    set alarmSound (alarmOption) {
+        this._alarmSound = new Audio(`/static/audio/${alarmOption}.mp3`);
     }
 
     set playAlarmSound (option) {
-        if (typeof(option) == Boolean) {
-            this._playAlarmSound = option;
-        }
+        this._playAlarmSound = option;
+
     }
 
     playAlarm () {
