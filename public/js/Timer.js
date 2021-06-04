@@ -4,6 +4,7 @@ class Timer{
         this.seconds = document.getElementById("seconds");
         this.stopTimer = false;
         this.updateTimerSettings(config);
+        this.alarmManager = new AlarmManager();
     }
 
     setMinutesHTML (minutes) {
@@ -38,6 +39,7 @@ class Timer{
         self.breakRunning = !self.breakRunning;
         self.setMinutesHTML(timeToSet);
         self.setTitlesStyle(titleStyleToSet);
+        self.alarmManager.playAlarm();
     }
 
     countTime(self) {
@@ -120,7 +122,7 @@ class Timer{
         if (!this.breakRunning) {
             this.roundsPassed++;
         }
-        this.interval = setInterval(this.countTime, 1, this);
+        this.interval = setInterval(this.countTime, 10, this);
     }
 
     stop (){
