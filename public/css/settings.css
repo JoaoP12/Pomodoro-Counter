@@ -13,8 +13,9 @@
 
 #inner-container {
     padding-top: 30px;
-    width: 378px;
-    height: 595px;
+    width: 25%;
+    min-width: 370px;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,4 +140,10 @@ input:checked + .slider:before {
 
 #save-settings:hover {
     background-color: #ffd98d;
+}
+
+select {
+    margin: 5px;
+    width: 150px;
+    height: 30px;
 }
