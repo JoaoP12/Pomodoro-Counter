@@ -7,10 +7,12 @@
     <script type="text/javascript" src="/static/js/Timer.js"></script>
     <script type="text/javascript" src="/static/js/Settings.js"></script>
     <script type="text/javascript" src="/static/js/NotificationManager.js"></script>
+    <script type="text/javascript" src="/static/js/AlarmManager.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/settings.css">
     <link rel="stylesheet" type="text/css" href="/static/css/app.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300&display=swap" rel="stylesheet">
+    <!-- <link href="/static/audio/morning-alarm."> -->
 </head>
 <body>
     <div class="app">
@@ -82,6 +84,23 @@
                         Notificate in the last <input type="number" id="time-remaining-alert" min="0" value="5"> minutes.
                     </label>
                     
+                </div>
+                <hr>
+                <div class="setting-field">
+                    <label for="play-alarm-dropdown">Play alarm sound?</label>
+                    <select id="play-alarm-dropdown">
+                        <option selected value="1">Sim</option>
+                        <option value="0">Não</option>
+                    </select>
+                </div>
+                <hr class="optional-alarm-drop">
+                <div class="setting-field optional-alarm-drop">
+                    <label for="alarm-sound-dropdown">Alarm sound options:</label>
+                    <select id="alarm-sound-dropdown">
+                        <option selected value="1">Morning Alarm</option>
+                        <option value="2">Slot Machine</option>
+                        <option value="3">Vintage Alarm</option>
+                    </select>
                 </div>
             </div>
             <input id="save-settings" type="button" value="Close">
