@@ -12,6 +12,7 @@ class Timer{
     }
 
     setSecondsHTML (seconds) {
+        document.title = `${self.minutes.innerHTML}:${self.seconds.innerHTML}- Pomodoro Timer`;
         self.seconds.innerHTML = seconds >= 10 ? String(seconds) : `0${seconds}`;
     }
 
@@ -122,7 +123,7 @@ class Timer{
         if (!this.breakRunning) {
             this.roundsPassed++;
         }
-        this.interval = setInterval(this.countTime, 10, this);
+        this.interval = setInterval(this.countTime, 1000, this);
     }
 
     stop (){
