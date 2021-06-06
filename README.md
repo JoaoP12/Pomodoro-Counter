@@ -32,6 +32,10 @@ If everything is working, you should see a page like this:
 
 After opening the page on your browser, the default focus, short and long break time will be loaded, but you can change it clicking on the Settings button and changing the values as you wish.
 
+You can see the Settings popup below:
+
+![image](https://github.com/JoaoP12/Pomodoro-Counter/blob/master/settings_popup.PNG)
+
 To start the timer, you can just hit the "Start" button.
 
 ## To do
@@ -40,4 +44,4 @@ To start the timer, you can just hit the "Start" button.
     - [x] Implement setting to notificate user in the last x minutes. (User can choose how many minutes before).
     - [x] Implement alarm sound.
 - [ ] Make the page responsive.
-- [ ] Change colors when alternating between focus time and breaks.
+- [x] Change colors when alternating between focus time and breaks.
