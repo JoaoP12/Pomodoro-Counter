@@ -5,12 +5,12 @@
 }
 
 :root {
-    --details-color: #008080;
-    --bkg-color: #066;
-}
-
-body {
-    background-color: var(--bkg-color); /* #00668c */
+    --dt-work: #008080;
+    --bkg-work: #066;
+    --dt-short: #83a85e;
+    --bkg-short: #69884a;
+    --dt-long: #373980;
+    --bkg-long: #2c2e66; 
 }
 
 .app {
@@ -22,16 +22,16 @@ body {
     justify-content: center;
 }
 
-.timer {
+#timer {
     width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--details-color);
+    background-color: var(--dt-work);
     padding: 50px;
     border-radius: 3em;
     border: 0.1px solid white;
-    box-shadow: 0 0 10px 1px var(--details-color);
+    box-shadow: 0 0 10px 1px var(--dt-work);
 }
 
 p {
@@ -54,15 +54,15 @@ h1 {
     height: 40px;
     border-radius: 60px;
     border: 2px solid white;
-    background-color: var(--details-color);
     font-size: 1em;
     font-weight: bold;
     color: white;
 }
 
 .option-btn:hover {
-    background-color: var(--bkg-color);
-    transition: .4s;
+    background-color: white !important;
+    color: black;
+    transition: 0.4s;
 }
 
 /* The intervals indicators */

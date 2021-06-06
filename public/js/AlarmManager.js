@@ -16,7 +16,6 @@ class AlarmManager {
 
     set playAlarmSound (option) {
         this._playAlarmSound = option;
-
     }
 
     playAlarm () {
@@ -27,6 +26,6 @@ class AlarmManager {
         setTimeout((self) => {
             self._alarmSound.pause();
             self._alarmSound.currentTime = 0;
-        }, 3000, this);
+        }, 2750, this);
     }
 }

@@ -30,7 +30,7 @@ class Timer{
         this.valMins = config.workTime;
         this.valSecs = 0;
         this.breakRunning = false;
-        this.setTitlesStyle(1);
+        this.setPageStyle(1);
         this.interval = null;
     }
 
@@ -39,7 +39,7 @@ class Timer{
         self.valMins = timeToSet;
         self.breakRunning = !self.breakRunning;
         self.setMinutesHTML(timeToSet);
-        self.setTitlesStyle(titleStyleToSet);
+        self.setPageStyle(titleStyleToSet);
         self.alarmManager.playAlarm();
     }
 
@@ -96,20 +96,43 @@ class Timer{
         document.getElementById('long-break-title').style = "";
     }
 
-    setTitlesStyle(indicator) {
-        var styleString = "border:2px solid white;border-radius:30px;background-color:var(--details-color);color: white;"
+    setPageStyle(indicator) {
+        var styleString;
         let element;
+        let optionBtns;
         this.clearTitlesStyle();
         switch(indicator) {
             case 1:
+                document.getElementById("timer").style = "background-color:var(--dt-work); box-shadow: 0 0 10px 1px var(--dt-work);transition: 1s;";
+                optionBtns = document.getElementsByClassName("option-btn");
+                for (let btn of optionBtns) {
+                    btn.style = "background-color: var(--dt-work); transition: 1s;";
+                }
+                document.getElementById("timer").style.backgroundColor = "var(--dt-work)";
+                document.body.style.backgroundColor = "var(--bkg-work)";
+                styleString = "border:2px solid white;border-radius:30px;background-color:var(--dt-work);color: white;"
                 element = document.getElementById('work-time-title');
                 element.style = styleString;
                 break;
             case 2:
+                document.getElementById("timer").style = "background-color:var(--dt-short); box-shadow: 0 0 10px 1px var(--dt-short);transition: 1s;";
+                optionBtns = document.getElementsByClassName("option-btn");
+                for (let btn of optionBtns) {
+                    btn.style = "background-color: var(--dt-short); transition: 1s;";
+                }
+                document.body.style.backgroundColor = "var(--bkg-short)";
+                styleString = "border:2px solid white;border-radius:30px;background-color:var(--dt-short);color: white;"
                 element = document.getElementById('short-break-title');
                 element.style = styleString;
                 break;
             case 3:
+                document.getElementById("timer").style = "background-color:var(--dt-long); box-shadow: 0 0 10px 1px var(--dt-long);transition: 1s;";
+                optionBtns = document.getElementsByClassName("option-btn");
+                for (let btn of optionBtns) {
+                    btn.style = "background-color: var(--dt-long); transition: 1s;";
+                }
+                document.body.style.backgroundColor = "var(--bkg-long)";
+                styleString = "border:2px solid white;border-radius:30px;background-color:var(--dt-long);color: white;"
                 element = document.getElementById('long-break-title');
                 element.style = styleString;
                 break;
